@@ -58,6 +58,9 @@ public class Main {
         }
         int z = myFunc(y);
         System.out.println(z);
+
+
+        System.out.println(distance(5, 8));
     }
 
     public static int myFunc(int x){
@@ -66,9 +69,29 @@ public class Main {
     }
 
     public static int distance(int x, int y){
-        int d = x - y;
-        if(d < 0)
-            d *= -1;
-        return d;
+        int small = x;
+        int large = y;
+        if(x > y){
+            small = y;
+            large = x;
+        }
+        int result = 0;
+        while(small + result < large)
+            result++;
+        return result;
+    }
+
+    public static int product(int x, int y){
+        int small = x;
+        int large = y;
+        if(x > y){
+            small = y;
+            large = x;
+        }
+        int result = 0;
+        for (int i = 0; i < small; i++) {
+            result += large;
+        }
+        return result;
     }
 }
