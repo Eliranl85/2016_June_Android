@@ -60,6 +60,21 @@ public class Main {
         //return 1;
     }
 
+    public static int power(int x, int y){
+        if(x == 0){
+            if(y == 0)
+                return -1;
+            return 0;
+        }
+        if(y == 0 || x == 1)
+            return 1;
+        int result = x;
+        for (int i = 1; i < y; i++) {
+            result *= x;
+
+        }
+        return result;
+    }
 
 
 }
