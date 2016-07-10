@@ -3,7 +3,8 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(quotient(0, 6));
+
+        System.out.println(power(3,18000));
     }
 
     public static int distance(int x, int y){
@@ -60,7 +61,7 @@ public class Main {
         //return 1;
     }
 
-    public static int power(int x, int y){
+    /*public static int power(int x, int y){
         if(x == 0){
             if(y == 0)
                 return -1;
@@ -74,7 +75,28 @@ public class Main {
 
         }
         return result;
+    }*/
+
+    public static int power(int x, int y){
+        if(x == 0){
+            if(y == 0)
+                return -1;
+            return 0;
+        }
+        if(y == 0 || x == 1)
+            return 1;
+        return power(x, y-1) * x;
     }
+
+    //power(2,3)
+    //power(2,2) * 2
+    //(power(2,1) * 2) * 2
+    //((power(2,0) * 2) * 2) * 2
+    //((1 * 2) * 2) * 2
+    //(2 * 2) * 2
+    //4 * 2
+    //8
+
 
 
 }
