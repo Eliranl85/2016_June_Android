@@ -45,4 +45,11 @@ public class Main {
 
         return result;
     }
+
+    public static int sqrt(int x){
+        int result = 0;
+        while(result * result < x)
+            result++;
+        return result;
+    }
 }
