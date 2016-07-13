@@ -12,7 +12,7 @@ public class Main {
             System.out.println();
         }
         */
-        drawX(10);
+        drawCircle(30, 20, 10);
 
     }
 
@@ -39,6 +39,23 @@ public class Main {
         }
     }
 
+    public static void drawCircle(int a, int b, int radius){
+        for (int i = 0; i < b + radius + 10; i++) {
+            for (int j = 0; j < a + radius + 10; j++) {
+                System.out.print(isPointOnCircle(a, b, radius, j, i) ? "*" : " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static boolean isPointOnCircle(int a, int b, int radius, int x, int y){
+        int deltaX = a - x;
+        int deltaY = b - y;
+        int difference = (deltaX*deltaX + deltaY*deltaY) - radius * radius;
+        if(difference < 0)
+            difference *= -1;
+        return difference < 5;
+    }
 
 
     public static int sumOfDigits(int num){
