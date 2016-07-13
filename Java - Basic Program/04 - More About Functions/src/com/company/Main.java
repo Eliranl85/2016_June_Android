@@ -39,7 +39,7 @@ public class Main {
         }
     }
 
-    public static void drawCircle(int a, int b, int radius){
+    public static void drawCircle(int a, int b, int radius) {
         for (int i = 0; i < b + radius + 10; i++) {
             for (int j = 0; j < a + radius + 10; j++) {
                 System.out.print(isPointOnCircle(a, b, radius, j, i) ? "*" : " ");
