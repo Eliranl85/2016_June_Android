@@ -12,9 +12,10 @@ public class Main {
             System.out.println();
         }
         */
-        drawCircle(30, 20, 10);
+        System.out.println(sqrtPrecise(10));
 
     }
+
 
 
     public static void drawRectangle(int width, int height){
@@ -26,6 +27,29 @@ public class Main {
             System.out.println();
         }
     }
+
+
+    public static void drawRectangle2(int width, int height){
+        for (int i = 0; i < width; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        for (int i = 0; i < height-2; i++) {
+            System.out.print("*");
+            for (int j = 0; j < width - 2; j++) {
+                System.out.print(" ");
+            }
+            System.out.print("*");
+            System.out.println();
+        }
+        for (int i = 0; i < width; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+    }
+
+
+
 
     public static void drawX(int size){
         if(size%2 == 0)
@@ -102,6 +126,22 @@ public class Main {
         int result = 0;
         while(result * result < x)
             result++;
+        return result;
+    }
+
+
+    public static double abs(double x){
+        return x < 0 ? -x : x;
+    }
+
+    public static double sqrtPrecise(double x){
+        double result = 0;
+        double add = 1000;
+        int count = 0;
+        while(abs(x - result * result) > 0.00001){
+
+        }
+
         return result;
     }
 }
