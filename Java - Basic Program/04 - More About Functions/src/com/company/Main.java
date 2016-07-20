@@ -12,14 +12,35 @@ public class Main {
             System.out.println();
         }
         */
-        System.out.println(sqrtPrecise(10));
 
+
+        int a = 5;
+        double b = a;
+
+
+        int[] x = {8};
+        func(x);
+        System.out.println(x[0]);
+    }
+
+
+    public static void func(int[] x){
+        x[0]++;
     }
 
 
 
-    public static void drawRectangle(int width, int height){
+
+
+
+    public static void drawRectangle(int x, int y, int width, int height){
+        for (int i = 0; i < y; i++) {
+            System.out.println();
+        }
         for (int i = 0; i < height; i++) {
+            for (int j = 0; j < x; j++) {
+                System.out.print(" ");
+            }
             for (int j = 0; j < width; j++) {
                 boolean isFrame = i==0 || i==height-1 || j==0 || j==width-1;
                 System.out.print(isFrame ? "*" : " ");
@@ -27,6 +48,7 @@ public class Main {
             System.out.println();
         }
     }
+
 
 
     public static void drawRectangle2(int width, int height){
@@ -88,7 +110,6 @@ public class Main {
         while(num != 0) {
             lastDigit = num % 10;
             num /= 10;
-
             result += lastDigit;
         }
 
@@ -139,7 +160,10 @@ public class Main {
         double add = 1000;
         int count = 0;
         while(abs(x - result * result) > 0.00001){
-
+            while((result + add) * (result + add) >= x){
+                add /= 10;
+            }
+            result += add;
         }
 
         return result;
