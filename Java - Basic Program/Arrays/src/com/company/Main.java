@@ -28,6 +28,11 @@ public class Main {
         a = b;
         b = temp;
 
+
+
+        int[] arr = {324, 12, 654, -234, 1323, 44};
+        printArray(arr);
+
     }
 
     public static int max(int[] nums){
@@ -76,5 +81,40 @@ public class Main {
         return false;
     }
 
+    public static void printArray(int arr[]){
+
+        System.out.print("{");
+        for (int i = 0; i < arr.length - 1; i++) {
+            System.out.print(arr[i] + ",");
+        }
+        if(arr.length > 0)
+            System.out.print(arr[arr.length - 1]);
+        System.out.println("}");
+
+        /*
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(i + (i==arr.length-1 ? "" : ","));
+        }
+        */
+    }
+
+    public static void sort(int[] arr){
+        boolean isSorted = false;
+        int upTo = arr.length - 1;
+        while(!isSorted){
+            isSorted = true;
+            for (int i = 0; i < upTo; i++) {
+                if(arr[i] > arr[i+1]){
+                    int temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                    isSorted = false;
+                }
+            }
+            upTo--;
+        }
+
+
+    }
 
 }
