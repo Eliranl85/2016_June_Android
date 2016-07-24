@@ -21,13 +21,26 @@ public class Main {
     public static int maxSubArray(int[] nums){
         int maxSoFar = 0;
         int maxEndingHere = 0;
+        //boolean allNegative = true;
+        //int maxAllNegative = nums[0];
         for (int i = 0; i < nums.length; i++) {
             maxEndingHere += nums[i];
             if(maxEndingHere < 0)
                 maxEndingHere = 0;
             if(maxSoFar < maxEndingHere)
                 maxSoFar = maxEndingHere;
+
+            /*
+            if(nums[i] >= 0)
+                allNegative = false;
+            if(allNegative && nums[i] > maxAllNegative)
+                maxAllNegative = nums[i];
+            */
         }
+        /*
+        if(allNegative)
+            return  maxAllNegative;
+        */
         return maxSoFar;
     }
 
