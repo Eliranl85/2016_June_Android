@@ -7,6 +7,10 @@ import graphicshape.Circle;
  */
 public class Ball extends Circle {
 
+    public Ball(int r) {
+        super(r);
+    }
+
     void bounce(){
         System.out.println(color);
     }

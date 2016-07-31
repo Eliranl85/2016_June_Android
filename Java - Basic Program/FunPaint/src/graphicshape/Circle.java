@@ -6,8 +6,13 @@ package graphicshape;
 public class Circle extends Shape {
     private int radius;
 
+    public Circle(int r){
+        this.radius = r;
+    }
+
+    @Override
     public double area(){
-        return 3.14 * radius * radius;
+        return Math.PI * radius * radius;
     }
 
     void fillColor(){

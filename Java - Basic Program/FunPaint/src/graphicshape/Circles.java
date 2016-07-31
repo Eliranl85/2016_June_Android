@@ -6,7 +6,7 @@ package graphicshape;
 public class Circles {
 
     void getArea(){
-        Circle circle = new Circle();
+        Circle circle = new Circle(5);
         //call to public method within package:
         double a = circle.area();
         //call default method:

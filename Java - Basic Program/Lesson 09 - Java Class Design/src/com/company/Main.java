@@ -34,10 +34,14 @@ public class Main {
         Dog d = new Dog();
         d.name = "Snoopy";
         //d.bark();
-        Animal a = d;
+        Animal a = d;//up casting   -  implicit casting
+        a = new Cat();
+        Dog d2 = (Dog)a; //down cast - explicit casting
+
         a.makeSound();
 
 
+        //Cat c = new Dog(); //this will NOT work!
 
 
         int x = 5;
@@ -71,6 +75,10 @@ class Dog extends Animal{
 
 }
 
+class Poodle extends Dog{
+
+}
+
 class Cat extends Animal{
     void growl(){
         System.out.println("mio mio");
@@ -79,4 +87,8 @@ class Cat extends Animal{
     void makeSound(){
         growl();
     }
+}
+
+class Car{
+
 }
