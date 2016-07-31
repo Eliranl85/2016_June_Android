@@ -34,6 +34,8 @@ public class Main {
         square.setWidth(10);
         System.out.println(square.area());
 
+        boolean[][] x = new boolean[3][5];
+
 
 
 
