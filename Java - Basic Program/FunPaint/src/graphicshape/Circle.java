@@ -7,7 +7,17 @@ public class Circle extends Shape {
     private int radius;
 
     public Circle(int r){
-        this.radius = r;
+        setRadius(r);
+    }
+
+
+    public int getRadius() {
+        return radius;
+    }
+
+    public void setRadius(int radius) {
+        if(radius >= 0)
+            this.radius = radius;
     }
 
     @Override

@@ -20,22 +20,24 @@ public class Main {
         c.color = 123;
         */
 
-        Circle circle = new Circle(4);
+        /*Circle circle = new Circle(4);
         System.out.println(circle.area());
 
         Shape[] shapes = {
                 new Circle(5),
                 new Rectangle(10, 5)
-        };
+        };*/
         //System.out.println(shapes[0]);
         //System.out.println(sumOfArea(shapes));
-
+/*
         Square square = new Square(5);
         square.setWidth(10);
-        System.out.println(square.area());
+        System.out.println(square.area());*/
 
-        boolean[][] x = new boolean[3][5];
-
+        Canvas canvas = new Canvas();
+        canvas.drawRectangle(6, 12, 30, 17);
+        canvas.drawRectangle(4, 8, 30, 17);
+        canvas.renderScreen();
 
 
 
@@ -48,5 +50,10 @@ public class Main {
             sum += shape.area();
         }
         return sum;
+    }
+
+    public static void change(int[] numbers){
+        //numbers = new int[]{23,64,13};
+        numbers[0] = 100;
     }
 }

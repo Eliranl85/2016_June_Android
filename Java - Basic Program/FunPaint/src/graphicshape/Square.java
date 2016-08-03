@@ -19,9 +19,14 @@ public class Square extends Rectangle {
         setSide(width);
     }
 
+
     @Override
     public void setHeight(int height) {
         setSide(height);
+    }
+
+    public int getSide(){
+        return getWidth();
     }
 
 }

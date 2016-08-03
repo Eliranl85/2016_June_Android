@@ -38,6 +38,7 @@ public class Main {
         };
 
         System.out.println(sum(nums));
+
     }
 
     /*
@@ -56,5 +57,4 @@ public class Main {
 
 
 }
-
 

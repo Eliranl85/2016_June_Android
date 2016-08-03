@@ -11,6 +11,15 @@ public class Ball extends Circle {
         super(r);
     }
 
+    public double volume(){
+        return area() * getRadius() / 3;
+    }
+
+    @Override
+    public double area() {
+        return 4 * super.area();
+    }
+
     void bounce(){
         System.out.println(color);
     }

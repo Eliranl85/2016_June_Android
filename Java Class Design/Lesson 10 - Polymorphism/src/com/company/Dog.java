@@ -5,6 +5,7 @@ package com.company;
  */
 public class Dog extends Animal {
 
+    
     @Override
     public void goToSleep() {
         System.out.println("dog is going to sleep");
