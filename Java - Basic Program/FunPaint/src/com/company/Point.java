@@ -26,7 +26,15 @@ public class Point {
     }
 
     public void setY(int y) {
-        if()
+        if(y < 0)
+            return;
         this.y = y;
     }
+
+    public double distanceTo(Point other){
+        int deltaX = this.x - other.x;
+        int deltaY = this.y - other.y;
+        return Math.sqrt(deltaX*deltaX + deltaY*deltaY);
+    }
+
 }

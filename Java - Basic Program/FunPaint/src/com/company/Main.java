@@ -34,10 +34,15 @@ public class Main {
         square.setWidth(10);
         System.out.println(square.area());*/
 
-        Canvas canvas = new Canvas();
-        canvas.drawRectangle(6, 12, 30, 17);
-        canvas.drawRectangle(4, 8, 30, 17);
-        canvas.renderScreen();
+//        Canvas canvas = new Canvas();
+//        canvas.drawRectangle(6, 12, 30, 17);
+//        canvas.drawRectangle(4, 8, 30, 17);
+//        canvas.renderScreen();
+
+        Point p1 = new Point(3,4);
+        Point p2 = new Point(5,6);
+        Segment segment = new Segment(p1, p2);
+        p1.setX(3);
 
 
 
