@@ -6,12 +6,15 @@ package com.company;
 public class Segment {
 
     private Point p1, p2;
+    private double length;
+    private boolean isLengthCalculated ;
 
     public Segment(Point p1, Point p2) {
         //aliasing
         //this.p1 = new Point(p1.getX(), p1.getY());
         this.p1 = p1;
         this.p2 = p2;
+        isLengthCalculated = false;
     }
 
     public Point getP1() {
@@ -20,17 +23,24 @@ public class Segment {
         return p1;
     }
 
-//    public void setP1(Point p1) {
-//        this.p1 = p1;
-//    }
+    public void setP1(Point p1) {
+        this.p1 = p1;
+        isLengthCalculated = false;
+    }
 
     public Point getP2() {
         return p2;
     }
 
-//    public void setP2(Point p2) {
-//        this.p2 = p2;
-//    }
+    public void setP2(Point p2) {
+        this.p2 = p2;
+        isLengthCalculated = false;
+    }
+
+    private void updateLengthField(){
+        this.length = p1.distanceTo(p2);
+        isLengthCalculated = true;
+    }
 
 
     public double slope(){
@@ -41,28 +51,39 @@ public class Segment {
         return deltaY/deltaX;
     }
 
-    public double B(){
+    public double slopeInRadians(){
+        return Math.atan(slope());
+    }
+
+    private double B(){
         return 1;
     }
 
-    public double A(){
+    private double A(){
         return -1*slope();
     }
 
-    public double C(){
+    private double C(){
         return slope()*p1.getX() - p1.getY();
     }
 
     public double distanceToPoint(Point point){
-        double numerator = A()*point.getX() + B()*point.getY()
+        double A = A();
+        double numerator = A*point.getX() + B()*point.getY()
                 + C();
         if(numerator < 0)
             numerator *= -1;
-        double denominator = Math.sqrt(A()*A() + B()*B());
+        double denominator = Math.sqrt(A*A + B()*B());
         return numerator / denominator;
     }
 
     public double length(){
-        return p1.distanceTo(p2);
+        if(!isLengthCalculated)
+            updateLengthField();
+        return length;
     }
+
+
+
+
 }

@@ -23,6 +23,10 @@ public class Canvas {
         }
     }
 
+    public void drawSegment(Segment segment){
+
+    }
+
     public void renderScreen(){
         for (int i = 0; i < canvas.length; i++) {
             for (int j = 0; j < canvas[i].length; j++) {
