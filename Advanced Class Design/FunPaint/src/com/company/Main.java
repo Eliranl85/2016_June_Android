@@ -1,10 +1,7 @@
 package com.company;
 
 
-import graphicshape.Circle;
-import graphicshape.Rectangle;
-import graphicshape.Shape;
-import graphicshape.Square;
+import graphicshape.*;
 //import graphicshape.Shape;
 
 public class Main {
@@ -87,6 +84,8 @@ public class Main {
 
         Point p = new Point(11, 2);
         System.out.println(p.hashCode());
+
+        Shape s = new Parallelogram(p, p, p);
 
 
     }
