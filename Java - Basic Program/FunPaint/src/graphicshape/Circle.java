@@ -28,4 +28,19 @@ public class Circle extends Shape {
     void fillColor(){
         System.out.println("color: " + color);
     }
+
+    public void fillColor(int red, int green, int blue){
+
+    }
+
+    public void fillColor(float hue, float saturation, float brightness){
+
+    }
+
+
+
+
+
+
+
 }

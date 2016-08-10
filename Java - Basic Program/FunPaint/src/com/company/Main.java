@@ -44,7 +44,9 @@ public class Main {
         Segment segment = new Segment(p1, p2);
         p1.setX(3);
 
-
+        Circle c = new Circle(14);
+        c.fillColor(20, 10, 1.0f);
+        c.fillColor(100, 120, 0);
 
 
     }
