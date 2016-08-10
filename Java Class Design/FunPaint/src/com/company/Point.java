@@ -23,7 +23,11 @@ public class Point {
 
     @Override
     public String toString() {
-        return "(" + x + "," + y + ")";
+        return "(" + commaSeparatedComponents() + ")";
+    }
+
+    protected String commaSeparatedComponents(){
+        return x + "," + y;
     }
 
     public int getY() {
@@ -34,6 +38,19 @@ public class Point {
         if(y < 0)
             return;
         this.y = y;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null)
+            return false;
+        if(this == obj)
+            return true;
+        if(obj instanceof Point){
+            Point other = (Point)obj;
+            return this.x == other.x && this.y == other.y;
+        }
+        return false;
     }
 
     public double distanceTo(Point other){

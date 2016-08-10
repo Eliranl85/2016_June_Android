@@ -31,7 +31,7 @@ public class Overloaded {
         */
 
         //aMethod(9);
-        aMethod(9,10);
+        //aMethod(9,10);
     }
 }
 class Animal{
@@ -50,8 +50,10 @@ class Dog extends Animal{
         too();
     }
 
+    /*
     @Override
     protected void too() {
         super.too();
     }
+    */
 }

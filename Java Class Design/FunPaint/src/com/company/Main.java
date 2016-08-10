@@ -53,10 +53,14 @@ public class Main {
         int x = 5;*/
 
 
-        Overloaded.go();
+        //Overloaded.go();
 
-
-
+        Point p1 = new Point(3,4);
+        Point p2 = new Point(3,4);
+        if(p1 == p2)
+            System.out.println("p1 is equal to p2");
+        else
+            System.out.println("p1 is NOT equal to p2");
 
 
 

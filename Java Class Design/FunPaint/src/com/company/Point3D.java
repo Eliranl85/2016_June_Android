@@ -12,9 +12,19 @@ public class Point3D extends Point {
         this.z = z;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(super.equals(obj)){
+            if(obj instanceof Point3D){
+                Point3D other = (Point3D)obj;
+                return this.z == other.z;
+            }
+        }
+        return false;
+    }
 
     @Override
-    public String toString() {
-        return super.toString() + z;
+    protected String commaSeparatedComponents() {
+        return super.commaSeparatedComponents() + "," + z;
     }
 }
