@@ -48,16 +48,44 @@ public class Main {
                 break;
         }
 
-        
+        System.out.println(p.getCapacity());
 
 
+
+    }
+
+    public static void foo(int val){
 
     }
 }
 
 enum PrinterType{
-    DOTMATRIX, INKJET, LASER, THREE_DIMENSIONS, THERMAL
+    DOTMATRIX(5), INKJET(15), LASER(100), THREE_DIMENSIONS(0), THERMAL(1000);
+
+    private int capacity;
+
+    private PrinterType(int capacity){
+        this.capacity = capacity;
+    }
+
+    public int getCapacity(){
+        return capacity;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 enum Cities{
     KFAR_SABA, RAANANA, HOD_HASHARON, ASHKELON
