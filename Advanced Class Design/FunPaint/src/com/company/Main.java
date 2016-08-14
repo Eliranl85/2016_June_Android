@@ -86,6 +86,7 @@ public class Main {
         System.out.println(p.hashCode());
 
         Shape s = new Parallelogram(p, p, p);
+        Shape.Color color = new Shape.Color();
 
 
     }
