@@ -17,20 +17,44 @@ public class MyList1 implements Listable {
 
     @Override
     public void add(int num) {
-        if(pos == nums.length){//out of space
-
-        }
+        makeRoom();
         nums[pos++] = num;
     }
 
+    private void makeRoom(){
+        if(pos == nums.length){//out of space
+            int[] temp = new int[nums.length * 2];
+            for (int i = 0; i < nums.length; i++) {
+                temp[i] = nums[i];
+            }
+            nums = temp;
+        }
+    }
+
+
+
     @Override
     public void remove(int index) {
-
+        if(index < 0 || index >= pos)
+            throw new IndexOutOfBoundsException("trying to remove at " + index);
+        for (int i = index; i < nums.length - 1; i++) {
+            nums[i] = nums[i+1];
+        }
+        pos--;
     }
+
+
 
     @Override
     public void addAt(int index, int num) {
-
+        if(index < 0 || index >= pos)
+            throw new IndexOutOfBoundsException("trying to add at " + index);
+        makeRoom();
+        for (int i = pos; i > index ; i--) {
+            nums[i] = nums[i-1];
+        }
+        nums[index] = num;
+        pos++;
     }
 
     @Override
@@ -55,6 +79,6 @@ public class MyList1 implements Listable {
 
     @Override
     public int size() {
-        return 0;
+        return pos;
     }
 }
