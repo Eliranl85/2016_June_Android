@@ -59,22 +59,48 @@ public class MyList1 implements Listable {
 
     @Override
     public void set(int index, int num) {
-
+        if(index < 0 || index >= pos)
+            throw new IndexOutOfBoundsException("trying to set at " + index);
+        nums[index] = num;
     }
 
     @Override
     public int get(int index) {
-        return 0;
+        if(index < 0 || index >= pos)
+            throw new IndexOutOfBoundsException("trying to get at " + index);
+        return nums[index];
     }
 
     @Override
     public int indexOf(int num) {
-        return 0;
+        for (int i = 0; i < pos; i++) {
+            if(nums[i] == num)
+                return i;
+        }
+        return -1;
     }
 
     @Override
     public int[] toArray() {
-        return new int[0];
+        int[] temp = new int[pos];
+        for (int i = 0; i < pos; i++) {
+            temp[i] = nums[i];
+        }
+        return temp;
+    }
+
+    @Override
+    public String toString() {
+        if(pos == 0)
+            return "{}";
+        String s = "{";
+
+        for (int i = 0; i < pos - 1; i++) {
+            s += nums[i] + ",";
+        }
+        s += nums[pos - 1];
+        s += "}";
+        return s;
     }
 
     @Override
