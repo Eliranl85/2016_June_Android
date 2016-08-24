@@ -14,7 +14,18 @@ public class Main {
     }
 
     public static int max(Node node){
-        return 0;
+        int max = node.value;
+        if(node.left != null){
+            int maxLeft = max(node.left);
+            if(maxLeft > max)
+                max = maxLeft;
+        }
+        if(node.right != null){
+            int maxRight = max(node.right);
+            if(maxRight > max)
+                max = maxRight;
+        }
+        return max;
     }
 
     public static int sum(Node node){
@@ -33,6 +44,30 @@ class Node{
 
     public Node(int value) {
         this.value = value;
+    }
+
+    public int max(){
+        int max = value;
+        if(left != null){
+            int maxLeft = left.max();
+            if(maxLeft > max)
+                max = maxLeft;
+        }
+        if(right != null){
+            int maxRight = right.max();
+            if(maxRight > max)
+                max = maxRight;
+        }
+        return max;
+    }
+
+    public int sum(){
+        int sum = value;
+        if(left != null)
+            sum += left.sum();
+        if(right != null)
+            sum += right.sum();
+        return sum;
     }
 
 
