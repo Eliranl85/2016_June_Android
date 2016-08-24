@@ -3,20 +3,13 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	    MyList1 myList1 = new MyList1();
-        myList1.add(100);
-        myList1.add(200);
-        myList1.add(400);
-        myList1.add(600);
-        myList1.add(3);
-        myList1.add(100);
-        myList1.add(200);
-        myList1.add(400);
-        myList1.add(600);
-        myList1.add(3);
-        myList1.add(5);
-        myList1.remove(1);
-        System.out.println(myList1.indexOf(600));
+	    MyList2 myList2 = new MyList2();
+        myList2.add(100);
+        myList2.add(200);
+        myList2.add(400);
+        myList2.add(600);
+        myList2.addAt(1,150);
+        System.out.println(myList2);
         /*
         try {
             myList1.remove(-8);
@@ -29,6 +22,6 @@ public class Main {
         */
         //myList1.remove(-8);
 
-        System.out.println("done");
+        //System.out.println("done");
     }
 }
