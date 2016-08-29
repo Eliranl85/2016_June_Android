@@ -3,18 +3,18 @@ package com.company;
 /**
  * Created by eladlavi on 17/08/2016.
  */
-public interface Listable {
+public interface Listable<T> {
 
-    void add(int num);
+    void add(T num);
     void remove(int index);
-    void addAt(int index, int num);
-    void set(int index, int num);
-    int get(int index);
+    void addAt(int index, T num);
+    void set(int index, T num);
+    T get(int index);
 
     //return -1 if num doesn't exist, otherwise returns the
     //first occurrence of num
-    int indexOf(int num);
-    int[] toArray();
+    int indexOf(T num);
+    T[] toArray();
     int size();
 
 
