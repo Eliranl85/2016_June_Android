@@ -6,6 +6,10 @@ public class Main {
         System.out.println("start");
 
 
+        //כתוב פונקציה שמקבלת מערך של מחרוזות ומחרוזת נוספת
+        //הפונקציה תדפיס את המקומות במערך שבו נמצא המחרוזת שהתקבלה
+
+
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
