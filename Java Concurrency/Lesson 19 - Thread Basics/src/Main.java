@@ -36,4 +36,98 @@ public class Main {
         return x;
     }
 
+    public static class SearchRunnable implements Runnable{
+
+        private int from, to;
+        private String[] words;
+        private String word;
+
+        public SearchRunnable(int from, int to, String[] words, String word) {
+            this.from = from;
+            this.to = to;
+            this.words = words;
+            this.word = word;
+        }
+
+        @Override
+        public void run() {
+            for (int i = from; i < to; i++) {
+                if(words[i].equals(word))
+                    System.out.println(i);
+            }
+        }
+    }
+
+
+
+
+    public static void search(String[] words, String word){
+        /*Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i < words.length / 2; i++) {
+                    if(words[i].equals(word))
+                        System.out.println(i);
+                }
+            }
+        });
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = words.length / 2; i < words.length; i++) {
+                    if(words[i].equals(word))
+                        System.out.println(i);
+                }
+            }
+        });
+        t1.start();
+        t2.start();*/
+//        Runnable r1 = new SearchRunnable(0, words.length/2, words, word);
+//        Runnable r2 = new SearchRunnable(words.length/2, words.length, words, word);
+//        Thread t1 = new Thread(r1);
+//        Thread t2 = new Thread(r2);
+
+        Thread t1 = new SearchThread(0, words.length/2, words, word);
+        Thread t2 = new SearchThread(words.length/2, words.length, words, word);
+
+
+        t1.start();
+        t2.start();
+
+        //שפר את הפתרון כך ש
+        //אם באף מהתהליכונים לא נמצאה המחרוזת אז יודפס ״לא נמצא״
+        //אם תהליכון מוצא את האיבר המבוקש אז הוא מפסיק ושאר התהליכונים מפסיקים
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
